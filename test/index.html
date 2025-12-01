@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gdev_form_validator / test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(to top, #acabb9 0%, #cbd7f6 100%);
+    }
+
+    button {
+      width: 99%;
+      padding: 13px;
+      color: white;
+      background-color: rgb(56, 56, 255);
+      border: none;
+      border-radius: 5px;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <form id="registerForm" data-veli-design="floating-label" data-veli-lang="en">
+    <h1>Create Account</h1>
+
+    <div class="veli-field-wrapper">
+      <input type="text" placeholder=" "
+        data-veli-rules='{"type":"text","name":"username","minChar":"3","maxChar":"20"}' />
+      <label>Username</label>
+      <span class="veli-error"></span>
+    </div>
+
+    <div class="veli-field-wrapper">
+      <input type="email" name="email" placeholder=" "
+        data-veli-rules='{"type":"email","name":"email", "provider":"gmail"}' />
+      <label>Email</label>
+      <span class="veli-error"></span>
+    </div>
+
+    <div class="veli-field-wrapper">
+      <input type="password" name="password" placeholder=" "
+        data-veli-rules='{"type":"password","name":"password","securityLevel":"s4"}' />
+      <label>Password</label>
+      <span class="veli-error"></span>
+    </div>
+
+    <div class="veli-field-wrapper">
+      <input type="password" name="confirmPassword" placeholder=" "
+        data-veli-rules='{"type":"password","name":"confirmPassword","confirmWith":"password"}' />
+      <label>Confirm Password</label>
+      <span class="veli-error"></span>
+    </div>
+
+    <div class="veli-field-wrapper">
+      <input type="checkbox" name="terms" placeholder=" "
+        data-veli-rules='{"type":"checkbox","name":"terms","required":"true", "checkedValue":"on", "unCheckedValue":"off"}' />
+      <label>I agree to the terms</label>
+      <span class="veli-error"></span>
+    </div>
+
+    <!-- Checkbox group: Select 1-3 interests (with 'reading' pre-selected) -->
+    <fieldset>
+      <legend>Select your interests (max 3):</legend>
+
+      <div class="veli-field-wrapper">
+        <input type="checkbox" name="reading"
+          data-veli-rules='{"type":"checkbox","name":"reading", "groupName":"interest", "groupMembers":"reading,sports,music,art","maxSelect":"3","defaultSelect":"reading",  "checkedValue":"reading", "unCheckedValue":"off"}' />
+        <label> Reading </label>
+      </div>
+
+      <div class="veli-field-wrapper">
+        <input type="checkbox" name="sports"
+          data-veli-rules='{"type":"checkbox","name":"sports",  "checkedValue":"sports", "unCheckedValue":"off"}' />
+        <label> Sports </label>
+      </div>
+
+      <div class="veli-field-wrapper">
+        <input type="checkbox" name="music"
+          data-veli-rules='{"type":"checkbox","name":"music",  "checkedValue":"music", "unCheckedValue":"off"}' />
+        <label> Music </label>
+      </div>
+
+      <div class="veli-field-wrapper">
+        <input type="checkbox" name="art"
+          data-veli-rules='{"type":"checkbox","name":"art",  "checkedValue":"art", "unCheckedValue":"off"}' />
+        <label> Art </label>
+      </div>
+    </fieldset>
+
+    <button type="button" id="submit">Sign Up</button>
+  </form>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@gd3v/veli@latest/dist/veli.js"></script>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

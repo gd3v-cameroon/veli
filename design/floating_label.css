@@ -1,0 +1,149 @@
+:root {
+  --veli-error-color: rgb(252, 14, 117);
+  --veli-success-color: #28a745;
+  --veli-warning-color: orange;
+  --veli-info-color: #0b5ed7;
+  --veli-error-color-rgb: 252, 14, 117;
+  --veli-success-color-rgb: 40, 167, 69;
+  --veli-warning-color-rgb: 255, 165, 0;
+  --veli-info-color-rgb: 11, 94, 215;
+}
+
+:root {
+  --veli-error-color: rgb(252, 14, 117);
+  --veli-success-color: #28a745;
+  --veli-warning-color: orange;
+  --veli-info-color: #0b5ed7;
+  --veli-error-color-rgb: 252, 14, 117;
+  --veli-success-color-rgb: 40, 167, 69;
+  --veli-warning-color-rgb: 255, 165, 0;
+  --veli-info-color-rgb: 11, 94, 215;
+}
+
+form[id] {
+  width: 400px;
+}
+
+form[data-veli-design=floating-label] .veli-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper:has(> input[data-veli-rules][type=checkbox],
+> input[data-veli-rules][type=radio]) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  position: static;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper:has(> input[data-veli-rules][type=checkbox],
+> input[data-veli-rules][type=radio]) > label {
+  position: static;
+  transform: none;
+  margin: 0;
+  padding: 0;
+  z-index: auto;
+  font-size: 15px;
+  order: 2;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper:has(> input[data-veli-rules][type=checkbox],
+> input[data-veli-rules][type=radio]) > input[data-veli-rules][type=checkbox],
+form[data-veli-design=floating-label] .veli-field-wrapper:has(> input[data-veli-rules][type=checkbox],
+> input[data-veli-rules][type=radio]) > input[data-veli-rules][type=radio] {
+  margin: 0;
+  flex-shrink: 0;
+  order: 1;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper:has(> input[data-veli-rules][type=checkbox],
+> input[data-veli-rules][type=radio]) .veli-error {
+  width: 100%;
+  order: 3;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper > input[data-veli-rules]:not([type=checkbox]):not([type=radio]),
+form[data-veli-design=floating-label] .veli-field-wrapper > textarea[data-veli-rules] {
+  position: relative;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper > label {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0 3px;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  pointer-events: none;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 10px;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper input[type=checkbox] {
+  border-radius: 3px;
+  border: 1px solid gray;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
+  position: static;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper > input[data-veli-rules],
+form[data-veli-design=floating-label] .veli-field-wrapper textarea[data-veli-rules] {
+  padding: 0 10px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #dee2e6;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  position: relative;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper > input[data-veli-rules]:focus,
+form[data-veli-design=floating-label] .veli-field-wrapper textarea[data-veli-rules]:focus {
+  border: 1px solid rgb(70, 144, 255);
+}
+form[data-veli-design=floating-label] .veli-field-wrapper textarea[data-veli-rules] {
+  padding: 10px;
+  height: 100px;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper textarea[data-veli-rules] ~ label {
+  align-items: flex-start;
+  padding-top: 10px;
+}
+form[data-veli-design=floating-label] .veli-field-wrapper > input[data-veli-rules]:not([type=checkbox]):not([type=radio]):focus ~ label,
+form[data-veli-design=floating-label] .veli-field-wrapper > input[data-veli-rules]:not([type=checkbox]):not([type=radio]):not(:placeholder-shown) ~ label,
+form[data-veli-design=floating-label] .veli-field-wrapper > textarea[data-veli-rules]:focus ~ label,
+form[data-veli-design=floating-label] .veli-field-wrapper > textarea[data-veli-rules]:not(:placeholder-shown) ~ label {
+  top: 0;
+  bottom: auto;
+  scale: 0.8;
+  padding: 0 5px;
+  background-color: white;
+  transform: translateY(-50%);
+}
+form[data-veli-design=floating-label] .veli-error {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--veli-error-color);
+  font-size: 15px;
+}
+form[data-veli-design=floating-label] .veli-error-field {
+  border: 1px solid var(--veli-error-color) !important;
+  outline: none;
+}
+form[data-veli-design=floating-label] .veli-warning-field {
+  border: 1px solid var(--veli-warning-color);
+  outline: none;
+}
+form[data-veli-design=floating-label] .veli-info-field {
+  border: 1px solid var(--veli-info-color);
+  outline: none;
+}
+form[data-veli-design=floating-label] .veli-success-field {
+  border: 1px solid var(--veli-success-color) !important;
+  outline: none;
+}

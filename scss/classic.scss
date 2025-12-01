@@ -1,0 +1,206 @@
+@import "variables";
+@import "./index.scss";
+form[data-veli-design="classic"] {
+  @mixin textFormate($color) {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    color: $color;
+    font-size: $font-size;
+  }
+
+  @mixin fieldContainerFormat($color, $border, $shadow) {
+    border: $border;
+    // box-shadow: $shadow;
+    outline: none;
+  }
+
+  .veli-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    // Checkbox and radio specific styling
+    &:has(
+        > input[data-veli-rules][type="checkbox"],
+        > input[data-veli-rules][type="radio"]
+      ) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+
+      > label {
+        margin: 0;
+        order: 2;
+      }
+
+      > input[data-veli-rules][type="checkbox"],
+      > input[data-veli-rules][type="radio"] {
+        margin: 0;
+        flex-shrink: 0;
+        order: 1;
+      }
+
+      .veli-error {
+        width: 100%;
+        order: 3;
+      }
+    }
+
+    > input[data-veli-rules],
+    textarea[data-veli-rules] {
+      padding: 0 5px;
+      border-radius: $field-border-radius;
+      border: 1px solid $field-border-color;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      background-color: $default-field-bg;
+    }
+
+    > input[data-veli-rules]:focus,
+    textarea[data-veli-rules]:focus {
+      border: 1px solid rgb(70, 144, 255);
+    }
+    input[data-veli-rules] {
+      height: $default-input-fields-height;
+    }
+    textarea[data-veli-rules] {
+      height: $default-textArea-height;
+    }
+    .capsule {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid $field-border-color;
+      transition: all 0.2s ease-in-out;
+      border-radius: $field-border-radius;
+      .leadingIcon,
+      .trailingIcon {
+        font-size: $icon-size;
+        color: $default-text-color;
+        padding: 0 5px;
+      }
+      input[data-veli-rules],
+      textarea[data-veli-rules] {
+        flex-grow: 1;
+        outline: none;
+        border: 0;
+        background-color: transparent;
+        padding: 10px 3px;
+      }
+    }
+
+    .capsule:focus-within {
+      border: 1px solid rgb(70, 144, 255);
+    }
+
+    .capsule:has(
+        input[data-veli-rules].veli-error-field,
+        textarea[data-veli-rules].veli-error-field
+      ) {
+      @include fieldContainerFormat(
+        $error-message-color,
+        $error-container-border,
+        $error-container-shadow
+      );
+    }
+
+    .capsule:has(
+        input[data-veli-rules].veli-warning-field,
+        textarea[data-veli-rules].veli-warning-field
+      ) {
+      @include fieldContainerFormat(
+        $warning-message-color,
+        $warning-container-border,
+        $warning-container-shadow
+      );
+    }
+
+    .capsule:has(
+        input[data-veli-rules].veli-info-field,
+        textarea[data-veli-rules].veli-info-field
+      ) {
+      @include fieldContainerFormat(
+        $info-message-color,
+        $info-container-border,
+        $info-container-shadow
+      );
+    }
+
+    .capsule:has(
+        input[data-veli-rules].veli-success-field,
+        textarea[data-veli-rules].veli-success-field
+      ) {
+      @include fieldContainerFormat(
+        $success-message-color,
+        $success-container-border,
+        $success-container-shadow
+      );
+    }
+  }
+
+  .veli-info {
+    @include textFormate($info-message-color);
+  }
+
+  .veli-success {
+    @include textFormate($success-message-color);
+  }
+
+  .veli-warning {
+    @include textFormate($warning-message-color);
+  }
+
+  .veli-error {
+    @include textFormate($error-message-color);
+  }
+
+  .veli-error-field {
+    @include fieldContainerFormat(
+      $error-message-color,
+      $error-container-border,
+      $error-container-shadow
+    );
+  }
+
+  .veli-warning-field {
+    @include fieldContainerFormat(
+      $warning-message-color,
+      $warning-container-border,
+      $warning-container-shadow
+    );
+  }
+
+  .veli-info-field {
+    @include fieldContainerFormat(
+      $info-message-color,
+      $info-container-border,
+      $info-container-shadow
+    );
+  }
+
+  .veli-success-field {
+    @include fieldContainerFormat(
+      $success-message-color,
+      $success-container-border,
+      $success-container-shadow
+    );
+  }
+
+  input[data-veli-rules] {
+    height: $default-input-fields-height;
+  }
+
+  textarea[data-veli-rules] {
+    height: $default-textArea-height;
+  }
+
+  input[data-veli-rules][type="checkbox"] {
+    width: fit-content;
+    height: fit-content;
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "supportedCountries": [
+    {
+      "name": "any",
+      "regex": "/^(?:(?:+|00)2[0-9]{2}|0)[0-9]{8,12}$/"
+    },
+    {
+      "name": "cameroon",
+      "regex": "^+?237s?[0-9]{8,9}$"
+    },
+    {
+      "name": "ghana",
+      "regex": "^+?233s?[0-9]{9}$"
+    },
+    {
+      "name": "nigeria",
+      "regex": "^+?234s?[0-9]{10,11}$"
+    },
+    {
+      "name": "south africa",
+      "regex": "^+?27[0-9]{9}$"
+    },
+    {
+      "name": "uganda",
+      "regex": "^+?256s?[0-9]{9}$"
+    },
+    {
+      "name": "zimbabwe",
+      "regex": "^+?263s?[0-9]{9}$"
+    },
+    {
+      "name": "kenya",
+      "regex": "^+?254s?[0-9]{9}$"
+    },
+    {
+      "name": "tanzania",
+      "regex": "^+?255s?[0-9]{9}$"
+    },
+    {
+      "name": "egypt",
+      "regex": "^+?20s?[0-9]{8,10}$"
+    },
+    {
+      "name": "algeria",
+      "regex": "^+?213s?[0-9]{9}$"
+    },
+    {
+      "name": "morocco",
+      "regex": "^+?212s?[0-9]{9}$"
+    },
+    {
+      "name": "ivory coast",
+      "regex": "^+?225s?[0-9]{8}$"
+    },
+    {
+      "name": "ethiopia",
+      "regex": "^+?251s?[0-9]{9}$"
+    },
+    {
+      "name": "angola",
+      "regex": "^+?244s?[0-9]{9}$"
+    },
+    {
+      "name": "senegal",
+      "regex": "^+?221s?[0-9]{8}$"
+    },
+    {
+      "name": "zambia",
+      "regex": "^+?260s?[0-9]{9}$"
+    },
+    {
+      "name": "malawi",
+      "regex": "^+?265s?[0-9]{8}$"
+    },
+    {
+      "name": "rwanda",
+      "regex": "^+?250s?[0-9]{8}$"
+    },
+
+    {
+      "name": "botswana",
+      "regex": "^+?267s?[0-9]{7}$"
+    },
+
+    {
+      "name": "namibia",
+      "regex": "^+?264s?[0-9]{9}$"
+    }
+  ]
+}

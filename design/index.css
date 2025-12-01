@@ -1,0 +1,14 @@
+:root {
+  --veli-error-color: rgb(252, 14, 117);
+  --veli-success-color: #28a745;
+  --veli-warning-color: orange;
+  --veli-info-color: #0b5ed7;
+  --veli-error-color-rgb: 252, 14, 117;
+  --veli-success-color-rgb: 40, 167, 69;
+  --veli-warning-color-rgb: 255, 165, 0;
+  --veli-info-color-rgb: 11, 94, 215;
+}
+
+form[id] {
+  width: 400px;
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@gd3v/veli",
+  "version": "1.0.0",
+  "description": "A robust form validation library for js based applications. No dependency, validation rules directly in HTML attributes.",
+  "main": "dist/veli.js",
+  "types": "dist/veli.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "compile:scss": "sass scss:design --no-source-map",
+    "compile:ts": "tsc",
+    "build": "npm run compile:scss && npm run compile:ts && webpack --mode production",
+    "dev": "concurrently \"npm run compile:scss -- --watch\" \"npm run compile:ts -- --watch\" \"webpack --mode development --watch\""
+  },
+  "keywords": [
+    "form validation",
+    "react form validation",
+    "validation",
+    "vanilla",
+    "no dependency",
+    "veli",
+    "form validation library",
+    "validation rules",
+    "html5 validation",
+    "client-side validation",
+    "custom validation",
+    "javascript form validation",
+    "input validation",
+    "frontend validation",
+    "real-time validation",
+    "lightweight validation",
+    "zero dependency validation"
+  ],
+  "license": "MIT",
+  "author": "gd3v",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gd3v-cameroon/veli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gd3v-cameroon/veli/issues"
+  },
+  "homepage": "https://veli.gd3v.com",
+  "devDependencies": {
+    "@babel/core": "^7.26.8",
+    "@babel/preset-env": "^7.26.8",
+    "autoprefixer": "^10.4.22",
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.5.6",
+    "sass": "^1.94.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.1.17",
+    "typescript-transform-paths": "^3.5.3",
+    "undici": "^5.28.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
